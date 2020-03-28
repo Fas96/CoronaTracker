@@ -7,11 +7,11 @@
 
     <fragment
         android:id="@+id/dashboard"
-        android:name="co.icanteach.app.coronatracker.DashboardFragment"
+        android:name="co.icanteach.app.coronatracker.presentation.dashboard.DashboardFragment"
         tools:layout="@layout/fragment_dashboard" />
     <fragment
         android:id="@+id/news"
-        android:name="co.icanteach.app.coronatracker.NewsFragment"
+        android:name="co.icanteach.app.coronatracker.presentation.news.NewsFragment"
         tools:layout="@layout/fragment_news" />
 
 </navigation>
