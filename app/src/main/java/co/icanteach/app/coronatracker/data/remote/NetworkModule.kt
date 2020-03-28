@@ -1,6 +1,7 @@
 package co.icanteach.app.coronatracker.data.remote
 
 import co.icanteach.app.coronatracker.BuildConfig
+import co.icanteach.app.coronatracker.data.TokenInterceptor
 import dagger.Module
 import dagger.Provides
 import dagger.Reusable
@@ -14,10 +15,17 @@ class NetworkModule {
 
     @Provides
     @Reusable
+    internal fun provideOkHttpClient(): OkHttpClient {
+        val builder = OkHttpClient.Builder()
+        builder.addInterceptor(TokenInterceptor())
+        return builder.build()
+    }
+
+    @Provides
+    @Reusable
     fun provideLoggingInterceptor(): HttpLoggingInterceptor {
         return HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
     }
-
 
     @Provides
     @Reusable

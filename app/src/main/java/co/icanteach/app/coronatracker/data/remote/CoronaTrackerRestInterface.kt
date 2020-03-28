@@ -7,12 +7,12 @@ import retrofit2.http.GET
 
 interface CoronaTrackerRestInterface {
 
-    @GET("/countriesData")
+    @GET("countriesData")
     suspend fun fetchCountriesData(): CountriesDataResponse
 
-    @GET("/totalData")
+    @GET("totalData")
     suspend fun fetchTotalData(): TotalDataResponse
 
-    @GET("/coronaNews")
+    @GET("coronaNews")
     suspend fun fetchCoronaNews(): NewsResponse
 }
