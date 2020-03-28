@@ -47,6 +47,12 @@ dependencies {
     implementation 'com.google.dagger:dagger:2.26'
     kapt 'com.google.dagger:dagger-compiler:2.26'
 
+    // network
+    implementation 'com.squareup.retrofit2:retrofit:2.6.2'
+    implementation "com.squareup.retrofit2:converter-moshi:2.4.0"
+    implementation "com.squareup.okhttp3:logging-interceptor:4.4.0"
+
+
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
