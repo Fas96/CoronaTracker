@@ -1,4 +1,4 @@
-package co.icanteach.app.coronatracker.inject
+package co.icanteach.app.coronatracker.core.inject
 
 import co.icanteach.app.coronatracker.data.remote.NetworkModule
 import dagger.Component

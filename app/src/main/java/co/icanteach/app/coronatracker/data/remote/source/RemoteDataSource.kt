@@ -2,6 +2,7 @@ package co.icanteach.app.coronatracker.data.remote.source
 
 import co.icanteach.app.coronatracker.data.remote.CoronaTrackerRestInterface
 import co.icanteach.app.coronatracker.data.remote.model.CountriesDataResponse
+import co.icanteach.app.coronatracker.data.remote.model.NewsResponse
 import co.icanteach.app.coronatracker.data.remote.model.TotalDataResponse
 import javax.inject.Inject
 
@@ -15,7 +16,7 @@ class RemoteDataSource @Inject constructor(private val restInterface: CoronaTrac
         return restInterface.fetchTotalData()
     }
 
-    suspend fun fetchCoronaNews() {
+    suspend fun fetchCoronaNews(): NewsResponse {
         return restInterface.fetchCoronaNews()
     }
 }
