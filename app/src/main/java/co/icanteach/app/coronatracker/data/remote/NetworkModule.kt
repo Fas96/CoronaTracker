@@ -1,5 +1,6 @@
 package co.icanteach.app.coronatracker.data.remote
 
+import co.icanteach.app.coronatracker.BuildConfig
 import dagger.Module
 import dagger.Provides
 import dagger.Reusable
@@ -23,7 +24,7 @@ class NetworkModule {
     fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit {
         return Retrofit.Builder()
             .client(okHttpClient)
-            .baseUrl("")
+            .baseUrl(BuildConfig.BASE_URL)
             .addConverterFactory(MoshiConverterFactory.create())
             .build()
     }
