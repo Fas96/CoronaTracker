@@ -3,12 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/dashboard"
-        android:icon="@drawable/ic_dashboard"
-        android:title="@string/dashboard_tab" />
-
-    <item
         android:id="@+id/news"
         android:icon="@drawable/ic_feed"
         android:title="@string/news_tab" />
+    <item
+        android:id="@+id/dashboard"
+        android:icon="@drawable/ic_dashboard"
+        android:title="@string/dashboard_tab" />
 </menu>

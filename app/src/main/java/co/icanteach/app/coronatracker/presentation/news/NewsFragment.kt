@@ -67,19 +67,19 @@ class NewsFragment : Fragment() {
 
     private fun openWebContent(url: String) {
         val builder = CustomTabsIntent.Builder()
-        // modify toolbar color
         builder.setToolbarColor(ContextCompat.getColor(requireContext(), R.color.colorPrimary))
-        // add share button to overflow men
         builder.addDefaultShareMenuItem()
-        // show website title
         builder.setShowTitle(true)
-        // animation for enter and exit of tab
         builder.setStartAnimations(
             requireContext(),
             android.R.anim.fade_in,
             android.R.anim.fade_out
         )
-        builder.setExitAnimations(requireContext(), android.R.anim.fade_in, android.R.anim.fade_out)
+        builder.setExitAnimations(
+            requireContext(),
+            android.R.anim.fade_in,
+            android.R.anim.fade_out
+        )
 
         val customTabsIntent = builder.build()
         customTabsIntent.launchUrl(requireContext(), Uri.parse(url))

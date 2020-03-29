@@ -6,7 +6,6 @@ import dagger.Subcomponent
 @Subcomponent
 interface NewsComponent {
 
-    // Factory that is used to create instances of this subcomponent
     @Subcomponent.Factory
     interface Factory {
         fun create(): NewsComponent
