@@ -11,7 +11,6 @@ a simple app that contains some basic functionality to follow Coronavirus statis
 - Retrofit 2 - OkHttp3 - request/response API
 - Glide - for image loading.
 - LiveData with Coroutines and Flow - Work In Progress.
-- LiveData - use LiveData to see UI update with data changes.
 - Data Binding - bind UI components in layouts to data sources
 
 ## Overview of app arch.
