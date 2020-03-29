@@ -19,6 +19,10 @@ a simple app that contains some basic functionality to follow Coronavirus statis
 - ViewModel provides data required by the UI class
 - Repository layer provides data to ViewModel classes. (single source of truth)
 
+## Remarks:
+
+Don't forget to update [COVID-19 Coronavirus API](https://collectapi.com/tr/api/corona/covid-19-koronavirus-istatistik-api) token to yours
+
 ## TODO for near future
 - [ ] improve Application UI.
 - [ ] update and fix [FetchDashboardUseCase](https://github.com/muratcanbur/CoronaTracker/blob/master/app/src/main/java/co/icanteach/app/coronatracker/domain/dashboard/FetchDashboardUseCase.kt)
