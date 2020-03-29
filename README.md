@@ -1,4 +1,4 @@
-# CoronaTracker
+# CoronaTracker (work-in-progress 👷‍♀️⛏)
 
 Android App using [COVID-19 Coronavirus API](https://collectapi.com/tr/api/corona/covid-19-koronavirus-istatistik-api)
 
