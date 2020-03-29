@@ -13,6 +13,8 @@ class NewsAdapter @Inject constructor() :
 
     private var newsList: MutableList<News> = mutableListOf()
 
+    var onNewsItemClick: ((String) -> Unit)? = null
+
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
@@ -37,6 +39,12 @@ class NewsAdapter @Inject constructor() :
 
     inner class NewsItemViewHolder(private val binding: ItemNewsBinding) :
         RecyclerView.ViewHolder(binding.root) {
+
+        init {
+            binding.root.setOnClickListener {
+                onNewsItemClick?.invoke(newsList[adapterPosition].sourceUrl)
+            }
+        }
 
         fun bind(newsItem: News) {
             with(binding) {

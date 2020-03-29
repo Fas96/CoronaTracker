@@ -39,14 +39,11 @@ class CoronaTrackerRepository @Inject constructor(private val remoteDataSource: 
     suspend fun fetchCoronaNews(): Flow<Resource<NewsResponse>> {
         return flow {
             emit(Resource.Loading())
-            Log.v("TESTTESTTEST","Loading")
             try {
                 val coronaNewsResponse = remoteDataSource.fetchCoronaNews()
                 emit(Resource.Success(coronaNewsResponse))
-                Log.v("TESTTESTTEST","Success")
             } catch (exception: Exception) {
                 emit(Resource.Error(exception))
-                Log.v("TESTTESTTEST",exception.toString())
             }
         }
     }

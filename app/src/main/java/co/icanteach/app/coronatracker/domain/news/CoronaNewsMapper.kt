@@ -12,7 +12,8 @@ class CoronaNewsMapper @Inject constructor() : Mapper<List<NewsItemResponse>, Li
                 sourceName = itemResponse.source,
                 imageUrl = itemResponse.image,
                 title = itemResponse.name,
-                description = itemResponse.description
+                description = itemResponse.description,
+                sourceUrl = itemResponse.url
             )
         }
     }

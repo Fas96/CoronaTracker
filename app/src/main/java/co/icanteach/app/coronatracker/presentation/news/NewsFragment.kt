@@ -1,12 +1,15 @@
 package co.icanteach.app.coronatracker.presentation.news
 
 import android.content.Context
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.browser.customtabs.CustomTabsIntent
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import co.icanteach.app.coronatracker.CoronaTrackerApplication
@@ -52,9 +55,33 @@ class NewsFragment : Fragment() {
         viewModel.fetchCoronaNews()
 
         recycler_view.adapter = newsAdapter
+        newsAdapter.onNewsItemClick = {
+            openWebContent(it)
+        }
 
-        viewModel.getNewsResult().observeNonNull(viewLifecycleOwner) {news ->
+        viewModel.getNewsResult().observeNonNull(viewLifecycleOwner) { news ->
             newsAdapter.setNews(news)
         }
+    }
+
+
+    private fun openWebContent(url: String) {
+        val builder = CustomTabsIntent.Builder()
+        // modify toolbar color
+        builder.setToolbarColor(ContextCompat.getColor(requireContext(), R.color.colorPrimary))
+        // add share button to overflow men
+        builder.addDefaultShareMenuItem()
+        // show website title
+        builder.setShowTitle(true)
+        // animation for enter and exit of tab
+        builder.setStartAnimations(
+            requireContext(),
+            android.R.anim.fade_in,
+            android.R.anim.fade_out
+        )
+        builder.setExitAnimations(requireContext(), android.R.anim.fade_in, android.R.anim.fade_out)
+
+        val customTabsIntent = builder.build()
+        customTabsIntent.launchUrl(requireContext(), Uri.parse(url))
     }
 }
