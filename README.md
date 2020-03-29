@@ -1,4 +1,4 @@
-# CoronaTracker
+# CoronaTracker (work-in-progress 👷‍♀️⛏)
 
 Android App using [COVID-19 Coronavirus API](https://collectapi.com/tr/api/corona/covid-19-koronavirus-istatistik-api)
 
@@ -18,6 +18,10 @@ a simple app that contains some basic functionality to follow Coronavirus statis
 - keep Fragments only responsible for UI related code 
 - ViewModel provides data required by the UI class
 - Repository layer provides data to ViewModel classes. (single source of truth)
+
+## Remarks:
+
+Don't forget to update [COVID-19 Coronavirus API](https://collectapi.com/tr/api/corona/covid-19-koronavirus-istatistik-api) token to yours
 
 ## TODO for near future
 - [ ] improve Application UI.
