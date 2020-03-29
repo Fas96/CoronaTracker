@@ -20,16 +20,50 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:padding="8dp">
 
 
-            <com.google.android.material.textview.MaterialTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@{viewState.newsItem.sourceName}"
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageViewNews"
+                android:layout_width="0dp"
+                android:layout_height="256dp"
+                android:scaleType="fitCenter"
+                app:imageUrl="@{viewState.newsItem.imageUrl}"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textViewTitle"
+                style="@style/TextStyle.Body1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{viewState.newsItem.title}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageViewNews" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textViewDesc"
+                style="@style/TextStyle.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingVertical="8dp"
+                android:maxLines="3"
+                android:ellipsize="end"
+                android:text="@{viewState.newsItem.description}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewTitle" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textViewSourceName"
+                style="@style/TextStyle.Caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingVertical="8dp"
+                android:text="@{viewState.newsItem.sourceName}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewDesc" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
