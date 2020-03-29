@@ -31,4 +31,9 @@
         <item name="android:textColor">@android:color/black</item>
     </style>
 
+
+    <style name="Toolbar" parent="Widget.MaterialComponents.Toolbar.Primary">
+        <item name="android:background">@android:color/white</item>
+    </style>
+
 </resources>

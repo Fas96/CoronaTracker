@@ -24,17 +24,16 @@ class NewsViewModel @Inject constructor(
         fetchCoronaNews()
     }
 
-    fun fetchCoronaNews() {
-        viewModelScope
-            .launch(Dispatchers.IO) {
-                fetchNewsUseCase.fetchCoronaNews().collect { resource ->
-                    when (resource) {
-                        is Resource.Success -> updatePageForResult(resource.data)
-                        is Resource.Error -> updatePageForError()
-                        is Resource.Loading -> updatePageForLoading()
-                    }
+    private fun fetchCoronaNews() {
+        viewModelScope.launch(Dispatchers.IO) {
+            fetchNewsUseCase.fetchCoronaNews().collect { resource ->
+                when (resource) {
+                    is Resource.Success -> updatePageForResult(resource.data)
+                    is Resource.Error -> updatePageForError()
+                    is Resource.Loading -> updatePageForLoading()
                 }
             }
+        }
     }
 
     private fun updatePageForResult(data: List<News>) {

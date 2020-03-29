@@ -1,6 +1,5 @@
 package co.icanteach.app.coronatracker.data
 
-import android.util.Log
 import co.icanteach.app.coronatracker.core.Resource
 import co.icanteach.app.coronatracker.data.remote.model.CountriesDataResponse
 import co.icanteach.app.coronatracker.data.remote.model.NewsResponse
