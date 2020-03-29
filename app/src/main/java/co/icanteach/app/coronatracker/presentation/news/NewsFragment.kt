@@ -52,13 +52,10 @@ class NewsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel.fetchCoronaNews()
-
         recycler_view.adapter = newsAdapter
         newsAdapter.onNewsItemClick = {
             openWebContent(it)
         }
-
         viewModel.getNewsResult().observeNonNull(viewLifecycleOwner) { news ->
             newsAdapter.setNews(news)
         }

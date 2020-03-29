@@ -20,6 +20,10 @@ class NewsViewModel @Inject constructor(
 
     fun getNewsResult(): LiveData<List<News>> = news
 
+    init {
+        fetchCoronaNews()
+    }
+
     fun fetchCoronaNews() {
         viewModelScope
             .launch(Dispatchers.IO) {
