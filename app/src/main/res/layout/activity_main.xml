@@ -4,9 +4,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <androidx.appcompat.widget.Toolbar
+    <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/tool_bar"
         android:layout_width="0dp"
+        android:elevation="4dp"
         android:layout_height="?attr/actionBarSize"
         android:background="@android:color/white"
         app:layout_constraintEnd_toEndOf="parent"
@@ -14,12 +15,11 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:padding="8dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:padding="8dp"
             app:srcCompat="@drawable/ic_toolbar" />
-
-    </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.MaterialToolbar>
 
     <fragment
         android:id="@+id/nav_host_fragment"
@@ -41,9 +41,9 @@
         android:layout_gravity="bottom"
         android:background="@android:color/white"
         app:itemIconTint="@color/colorPrimary"
-        app:labelVisibilityMode="unlabeled"
         app:itemRippleColor="@color/colorAccent"
         app:itemTextColor="@color/colorPrimary"
+        app:labelVisibilityMode="unlabeled"
         app:layout_constraintBottom_toBottomOf="parent"
         app:menu="@menu/bottom_navigation_menu" />
 
