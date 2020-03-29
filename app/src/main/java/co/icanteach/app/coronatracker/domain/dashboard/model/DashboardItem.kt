@@ -2,8 +2,8 @@ package co.icanteach.app.coronatracker.domain.dashboard.model
 
 sealed class DashboardItem {
     class Motherland(
-        dailyInfoImage: String,
-        totalInfoImage: String
+        val dailyInfoImage: String,
+        val totalInfoImage: String
     ) : DashboardItem()
 
     class EarthTotal(

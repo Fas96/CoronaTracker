@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="viewState"
+            type="co.icanteach.app.coronatracker.presentation.dashboard.DashboardMotherlandItemViewState" />
+
+    </data>
+
+
+    <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageViewDaily"
+                android:layout_width="0dp"
+                android:layout_height="256dp"
+                android:paddingHorizontal="8dp"
+                android:scaleType="fitCenter"
+                app:imageUrl="@{viewState.dashboardItem.dailyInfoImage}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageViewTotal"
+                android:layout_width="0dp"
+                android:layout_height="256dp"
+                android:paddingHorizontal="8dp"
+                android:scaleType="fitCenter"
+                android:paddingBottom="8dp"
+                app:imageUrl="@{viewState.dashboardItem.totalInfoImage}"
+                app:layout_constraintTop_toBottomOf="@+id/imageViewDaily"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>
